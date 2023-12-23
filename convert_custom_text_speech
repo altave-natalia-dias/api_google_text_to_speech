@@ -1,0 +1,27 @@
+# Import the required module for text to speech conversion
+from gtts import gTTS
+
+# This module is imported so that we can play the converted audio
+import os
+
+def convert_text_to_speech(text, language='en', slow=False):
+    """
+    Convert the given text to speech and save it as an mp3 file.
+
+    Args:
+        text (str): The text to be converted to speech.
+        language (str): Language in which you want to convert (default is 'en').
+        slow (bool): Whether the converted audio should have a high speed (default is False).
+
+    Returns:
+        None
+    """
+    # Create a gTTS object
+    myobj = gTTS(text=text, lang=language, slow=slow)
+
+    # Save the converted audio in an mp3 file
+    myobj.save("custom_output.mp3")
+
+# Example usage
+custom_text = 'Hello, this is a custom text!'
+convert_text_to_speech(custom_text)
