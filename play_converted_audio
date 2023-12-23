@@ -1,0 +1,18 @@
+# This module is imported so that we can play the converted audio
+import os
+
+def play_converted_audio(file_path):
+    """
+    Play the converted audio file.
+
+    Args:
+        file_path (str): The path to the audio file.
+
+    Returns:
+        None
+    """
+    # Playing the converted file
+    os.system(f"mpg321 {file_path}")
+
+# Example usage
+play_converted_audio("custom_output.mp3")
